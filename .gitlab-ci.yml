@@ -1,0 +1,17 @@
+name: passman ci-pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build the runner ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: setup go v 1.x
+        uses: actions/setup-go@v3
