@@ -1,17 +1,16 @@
-name: passman ci-pipeline
+image: ubuntu:latest
 
-on:
-  push:
-    branches: [main]
+stages:
+  - build
 
-jobs:
-  build:
-    name: Build the runner ubuntu
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v3
-
-      - name: setup go v 1.x
-        uses: actions/setup-go@v3
+build:
+  stage: build
+  script:
+    - apt-get update -y
+    - apt-get install -y golang
+    - go version
+    - git clone https://gitlab.com/abhishek_codes/passman.git
+    - cd passman
+    -  # add any other build steps you need
+  tags:
+    - docker
