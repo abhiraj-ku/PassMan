@@ -1,1 +1,2 @@
 1. Initial setup - test code upload to gitlab
+2. Add the folder structure and root.go file to init the cobra clis

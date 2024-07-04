@@ -1,7 +1,8 @@
 package main
 
-import "fmt"
+import "gitlab.com/abhishek_codes/passman/cmd"
 
 func main() {
-	fmt.Printf("Hello")
+	cmd.Execute()
+
 }
